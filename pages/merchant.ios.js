@@ -15,24 +15,28 @@ var Merchant = React.createClass({
         price: "￥18.9",
         description: "金鱼草为多年生草本，常作一、二年生花卉栽培。株高20～70厘米，叶片长圆状披针形。有白、淡红、深红、肉色、深黄、浅黄、黄橙等色。",
         distance: "10km",
-        when: "刚刚"
+        when: "刚刚",
+        image: require("image!merchant-sample")
       },{
-        price: "￥18.9",
-        description: "金鱼草为多年生草本，常作一、二年生花卉栽培。株高20～70厘米，叶片长圆状披针形。有白、淡红、深红、肉色、深黄、浅黄、黄橙等色。",
-        distance: "10km",
-        when: "刚刚"
+        price: "￥23",
+        description: "矮牵牛为株高15到60厘米，茎基部木质化，而嫩茎直立，老茎匐匐状。单叶互生，卵形，全缘，近无柄，上部叶对生，花单生叶腋或顶生。",
+        distance: "12km",
+        when: "10分钟前",
+        image:require("image!merchant-sample-1")
       },
       {
-        price: "￥18.9",
-        description: "金鱼草为多年生草本，常作一、二年生花卉栽培。株高20～70厘米，叶片长圆状披针形。有白、淡红、深红、肉色、深黄、浅黄、黄橙等色。",
-        distance: "10km",
-        when: "刚刚"
+        price: "￥30",
+        description: "繁缕为二年生草本，高10到30厘米。茎俯仰或上升，基部多少分枝，繁缕喜温和湿润的环境，云南一般在雨季生长旺盛，冬季也能见到的。",
+        distance: "30km",
+        when: "1小时前",
+        image:require("image!merchant-sample-2")
       },
       {
-        price: "￥18.9",
+        price: "￥54",
         description: "金鱼草为多年生草本，常作一、二年生花卉栽培。株高20～70厘米，叶片长圆状披针形。有白、淡红、深红、肉色、深黄、浅黄、黄橙等色。",
         distance: "10km",
-        when: "刚刚"
+        when: "昨天",
+        image:require("image!merchant-sample-3")
       }])
     }
   },
@@ -62,7 +66,7 @@ var Merchant = React.createClass({
 
               }}>
               <View >
-                <Image style={styles.itemImageStyle} source={require('../img/data/merchant-sample.jpg')} />
+                <Image style={styles.itemImageStyle} source={rowData.image} />
                 <View style={styles.itemTextStyle}><Text style={styles.priceTextStyle}>{rowData.price}</Text></View>
                 <View style={styles.itemContentStyle}><Text numberOfLines={7} style={styles.contentTextStyle}>{rowData.description}</Text></View>
                 <View style={styles.itemOtherStyle}>

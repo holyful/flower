@@ -14,40 +14,48 @@ var Plant = React.createClass({
       dataSourceWrapper: ds.cloneWithRows([
            ds.cloneWithRows([
               {
-                image: null,
+
                 title: '雏菊',
-                rowSpan: 2
+                rowSpan: 2,
+                image: require('../img/data/plant-sample-1.jpg')
               },{
-                image: null,
+
                 title: '繁缕',
-                rowSpan: 1
+                rowSpan: 1,
+                image: require('../img/data/plant-sample-2.jpg')
               },{
-                image: null,
+
                 title: '罂粟',
-                rowSpan: 1
+                rowSpan: 1,
+                image: require('../img/data/plant-sample-3.jpg')
               },{
-                image: null,
+
                 title: '紫云英',
-                rowSpan: 2
+                rowSpan: 2,
+                image: require('../img/data/plant-sample-4.jpg')
               }
             ]),
           ds.cloneWithRows([
               {
-                image: null,
+
                 title: '细叶亚菊',
-                rowSpan: 2
+                rowSpan: 2,
+                image: require('../img/data/plant-sample-5.jpg')
               },{
-                image: null,
+
                 title: '金鱼草',
-                rowSpan: 2
+                rowSpan: 2,
+                image: require('../img/data/plant-sample-6.jpg')
               },{
-                image: null,
+
                 title: '锦葵',
-                rowSpan: 1
+                rowSpan: 1,
+                image: require('../img/data/plant-sample-7.jpg')
               },{
-                image: null,
+
                 title: '二月兰',
-                rowSpan: 1
+                rowSpan: 1,
+                image: require('../img/data/plant-sample-8.jpg')
               }
           ])
       ])
@@ -82,7 +90,7 @@ var Plant = React.createClass({
 
                     }}>
                     <View>
-                      <Image style={[styles.itemImageStyle, {height: 100 * singleRowData.rowSpan + 5 * (singleRowData.rowSpan - 1)}]} source={require('../img/data/merchant-sample.jpg')} />
+                      <Image style={[styles.itemImageStyle, {height: 100 * singleRowData.rowSpan + 5 * (singleRowData.rowSpan - 1)}]} source={singleRowData.image} />
                       <View style={styles.itemTextStyle}><Text style={styles.nameTextStyle}>{singleRowData.title}</Text></View>
                     </View>
                     </TouchableHighlight>

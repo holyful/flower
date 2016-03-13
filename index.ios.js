@@ -61,7 +61,7 @@ var flower = React.createClass ({
   render: function() {
     return (
       <TabBarIOS tintColor="#74797a">
-        <TabBarIOS.Item title="首页" selected={true}  resizeMode='contain' icon={{uri: Image.Home, scale: 8}}>
+        <TabBarIOS.Item title="首页" selected={true}  resizeMode='contain'  icon={{uri: Image.Home, scale: 8}}>
           <NavigatorIOS
                 style={styles.container}
                 initialRoute={{
@@ -76,6 +76,24 @@ var flower = React.createClass ({
                 initialRoute={{
                   component: MyView,
                   title: '交流',
+                  passProps: { myProp: 'foo' },
+          }}/>
+        </TabBarIOS.Item>
+        <TabBarIOS.Item title="购物车" selected={false} resizeMode='contain' icon={{uri: Image.Cart, scale: 8}}>
+          <NavigatorIOS
+                style={styles.container}
+                initialRoute={{
+                  component: MyView,
+                  title: '购物车',
+                  passProps: { myProp: 'foo' },
+          }}/>
+        </TabBarIOS.Item>
+        <TabBarIOS.Item title="个人中心" selected={false} resizeMode='contain' icon={{uri: Image.My, scale: 8}}>
+          <NavigatorIOS
+                style={styles.container}
+                initialRoute={{
+                  component: MyView,
+                  title: '个人中心',
                   passProps: { myProp: 'foo' },
           }}/>
         </TabBarIOS.Item>
