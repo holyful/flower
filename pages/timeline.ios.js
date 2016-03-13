@@ -13,33 +13,27 @@ var Timeline = React.createClass({
       dataSource: ds.cloneWithRows([
         {
           name:"小白菜爱种花",
-          avatar: '../img/data/avatar-sample.jpg',
-          content:"bla~bla~bla,bla~bla~blabla~bla~blabla~bla~blabla~bla~blabla~bla~blabla~bla~bla,bla~bla~blabla~bla~blabla~bla~bla",
-          images: ['../img/data/merchant-sample.jpg','../img/data/merchant-sample.jpg','../img/data/merchant-sample.jpg']
+          avatar: require('../img/data/avatar-sample-1.jpg'),
+          content:"就是喜欢菊科植物",
+          images: [require('../img/data/plant-sample-1.jpg'),require('../img/data/plant-sample-2.jpg')]
         },
         {
           name:"小白菜爱种花",
-          avatar: '../img/data/avatar-sample.jpg',
-          content:"bla~bla~bla,bla~bla~blabla~bla~blabla~bla~blabla~bla~blabla~bla~blabla~bla~bla,bla~bla~blabla~bla~blabla~bla~bla",
-          images: ['../img/data/merchant-sample.jpg','../img/data/merchant-sample.jpg','../img/data/merchant-sample.jpg']
+          avatar: require('../img/data/avatar-sample-2.jpg'),
+          content:"就是喜欢菊科植物",
+          images: [require('../img/data/plant-sample-3.jpg'),require('../img/data/plant-sample-4.jpg')]
         },
         {
           name:"小白菜爱种花",
-          avatar: '../img/data/avatar-sample.jpg',
+          avatar: require('../img/data/avatar-sample-4.jpg'),
           content:"bla~bla~bla,bla~bla~blabla~bla~blabla~bla~blabla~bla~blabla~bla~blabla~bla~bla,bla~bla~blabla~bla~blabla~bla~bla",
-          images: ['../img/data/merchant-sample.jpg','../img/data/merchant-sample.jpg','../img/data/merchant-sample.jpg']
+          images: [require('../img/data/plant-sample-5.jpg')]
         },
         {
           name:"小白菜爱种花",
-          avatar: '../img/data/avatar-sample.jpg',
+          avatar: require('../img/data/avatar-sample-3.jpg'),
           content:"bla~bla~bla,bla~bla~blabla~bla~blabla~bla~blabla~bla~blabla~bla~blabla~bla~bla,bla~bla~blabla~bla~blabla~bla~bla",
-          images: ['../img/data/merchant-sample.jpg','../img/data/merchant-sample.jpg','../img/data/merchant-sample.jpg']
-        },
-        {
-          name:"小白菜爱种花",
-          avatar: '../img/data/avatar-sample.jpg',
-          content:"bla~bla~bla,bla~bla~blabla~bla~blabla~bla~blabla~bla~blabla~bla~blabla~bla~bla,bla~bla~blabla~bla~blabla~bla~bla",
-          images: ['../img/data/merchant-sample.jpg','../img/data/merchant-sample.jpg','../img/data/merchant-sample.jpg']
+          images: [require('../img/data/plant-sample-6.jpg')]
         }
       ])
     }
@@ -52,16 +46,20 @@ var Timeline = React.createClass({
           return (
             <View style={styles.itemStyle}>
               <View style={styles.avatarStyle}>
-                <Image source={require('../img/data/avatar-sample.jpg')} style={{width: 40, height: 40, borderRadius: 20}} />
+                <Image source={rowData.avatar} style={{width: 40, height: 40, borderRadius: 20}} />
                 <Text style={{flex:1,paddingLeft: 10, paddingRight: 10, color: '#3c4144'}} >{rowData.name}</Text>
               </View>
               <View style={styles.contentStyle}>
-                <Text style={{}}>{rowData.content}</Text>
+                <Text style={{textAlign:'left'}}>{rowData.content}</Text>
               </View>
               <View style={{flexDirection: 'row', flexWrap: 'wrap', paddingLeft: 10, paddingBottom: 10, paddingRight: 10}}>
-                <Image style={styles.imageStyle} resizeMode="contain" source={require('../img/data/merchant-sample.jpg')} />
-                <Image style={styles.imageStyle} resizeMode="contain" source={require('../img/data/merchant-sample.jpg')} />
-                <Image style={styles.imageStyle} resizeMode="contain" source={require('../img/data/merchant-sample.jpg')} />
+                {
+                  rowData.images.map(function(item, key){
+                    return (
+                      <Image key={key} style={styles.imageStyle} resizeMode="contain" source={item} />
+                    )
+                  })
+                }
               </View>
             </View>
           )

@@ -17,14 +17,14 @@ var Garden = React.createClass({
         {
             title:'锦葵',
             description:'花高20-50厘米花高20-50厘米花高20-50厘米花高20-50厘米花高20-50厘米',
-            image:"../img/data/merchant-sample.jpg",
+            image:require("../img/data/plant-sample-2.jpg"),
             date:"2016-03-01",
             comment:"随风而去，轻旋起舞"
         },
         {
             title:'锦葵',
             description:'花高20-50厘米花高20-50厘米花高20-50厘米花高20-50厘米花高20-50厘米花高20-50厘米',
-            image:"../img/data/merchant-sample.jpg",
+            image:require("../img/data/plant-sample-4.jpg"),
             date:"2016-03-01",
             comment:"随风而去，轻旋起舞"
         }
@@ -87,7 +87,7 @@ var Garden = React.createClass({
               <View>
                 <View style={styles.collectionItemStyle}>
                   <View style={styles.collectionImageStyle}>
-                    <Image source={require("../img/data/merchant-sample.jpg")} style={{width: 80, height: 80, borderRadius: 5}} resizeMode="contain"  />
+                    <Image source={rowData.image} style={{width: 80, height: 80, borderRadius: 5}} resizeMode="contain"  />
                   </View>
                   <View style={styles.collectionTextStyle}>
                     <Text style={styles.collectionTitleStyle}>{rowData.title}</Text>

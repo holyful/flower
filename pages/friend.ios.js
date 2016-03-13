@@ -14,31 +14,33 @@ var Firend = React.createClass({
       dataSource: ds.cloneWithRows([
         {
           name: '凋谢的花朵',
-          solgon: '一花一世界，一树一如来'
+          solgon: '一花一世界，一树一如来',
+          avatar: require('../img/data/avatar-sample.jpg')
+        },
+        {
+          name: '谷园讲通鉴',
+          solgon: '踩着粉色的花瓣一路向前',
+          avatar: require('../img/data/avatar-sample-1.jpg')
+        },
+        {
+          name: '黑夜花开',
+          solgon: '仿佛一切还没有开始',
+          avatar: require('../img/data/avatar-sample-2.jpg')
+        },
+        {
+          name: '蔷薇花',
+          solgon: '花又开，开在了栅栏上',
+          avatar: require('../img/data/avatar-sample-3.jpg')
+        },
+        {
+          name: '无名',
+          solgon: '这家伙很懒什么也没有留下',
+          avatar: require('../img/data/avatar-sample-4.jpg')
         },
         {
           name: '凋谢的花朵',
-          solgon: '一花一世界，一树一如来'
-        },
-        {
-          name: '凋谢的花朵',
-          solgon: '一花一世界，一树一如来'
-        },
-        {
-          name: '凋谢的花朵',
-          solgon: '一花一世界，一树一如来'
-        },
-        {
-          name: '凋谢的花朵',
-          solgon: '一花一世界，一树一如来'
-        },
-        {
-          name: '凋谢的花朵',
-          solgon: '一花一世界，一树一如来'
-        },
-        {
-          name: '凋谢的花朵',
-          solgon: '一花一世界，一树一如来'
+          solgon: '一花一世界，一树一如来',
+          avatar: require('../img/data/avatar-sample-5.jpg')
         }
       ])
     }
@@ -64,7 +66,7 @@ var Firend = React.createClass({
           renderRow={function(rowData){
             return (
               <View style={styles.avatarStyle}>
-                <Image style={{width: 80, height: 80, borderRadius:40}} resizeMode="contain" source={require('../img/data/avatar-sample.jpg')} />
+                <Image style={{width: 80, height: 80, borderRadius:40}} resizeMode="contain" source={rowData.avatar} />
                 <View style={styles.textStyle}>
                   <Text numberOfLines={1} style={styles.textTitleStyle}>{rowData.name}</Text>
                   <Text numberOfLines={3} style={styles.textContentStyle}>{rowData.solgon}</Text>
